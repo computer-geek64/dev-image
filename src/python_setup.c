@@ -99,9 +99,8 @@ int installPython(char *version) {
     // Upgrade pip
     printf("Upgrading pip...\n");
     fflush(stdout);
-    upgradePip();
+    if (upgradePip()) return 1;
 
-    system("python3 --version");
     return 0;
 }
 
